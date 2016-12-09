@@ -44,18 +44,58 @@ Note: When you're done, submit a PR.
   * .maximum finds the max of an attribute, .minimum does the same. .joins is awesome for grouping and ordering by a relational attribute. .where is like #find_all in Ruby, and you can pass it a range as an argument! The .joins(:table).group(:attribute).count makes a sweet hash of the :attribute keys pointing to their count.
   
 2. Name your three favorite ActiveRecord rake tasks and describe what they do. 
-  * 
+  * I mean how can you not love rake db:create_migration NAME=command_description? I'd be lost without it. I also love rake db:test:prepare, because it creates a nifty test database that I can use without affecting the production data. Lastly, what would I do without rake db:migrate? I make all these migrations and specify data types and timestamps, and it's all for nothing unless I rake db:migrate to my database!
+  
 4. What can you expect from a group as you begin working together? As you continue working together?
+ * I always expect some awkward figurings out of how each other works. I get through this by explicitly and humorously acknowledging tension and awkwardity (I wish that was a word). I also expect to learn what peoples' learning goals are for the project, and what they are nervous about and excited for. As work progresses, I keep adaptability in mind, because behaviors can emerge from people that they are not aware of and may not have mentioned. Productivity can also increase as group members grow to know each other's style and quirks. It also gets more fun (ideally)!
+ 
 5. What two columns does `t.timestamps null: false` create in our database?
+ * created_at and updated_at
+ 
 6. What cURL flag can you use to send a `POST` request?
+ * No clue.
+ 
 7. What case does JSON (and JavaScript) use for multi-word variables?
+ * thisOne amIRight?
+ 
 8. What case does Ruby use for multi-word variables?
+ * snake_case
+ 
 9. In a database that's holding schools and teachers, what will be the relationship between schools and teachers?
+ * Typically, one-to-many (school-to-teachers).
+
 10. In the same database, what will you need to do to create this relationship (draw a schema diagram)?
+ * I need the foreign key of schools.id in the teachers table, and association methods in the models.
+```
+def create_table :teachers do |t|
+ t.string :name
+ t.integer :school_id
+ 
+ t.timestamps null: false
+end
+
+def create_table :schools do |t|
+ t.string :name
+end
+```
+
 11. Give an example of when you might want to store information besides ids on a join table.
+ * Other unique identifiers, like date or a composition of author and title for a book.
+ 
 12. Describe and diagram the relationship between patients and doctors.
+ * A patient could have many doctors or just one doctor. Basically all doctors have many patients. They would be related through a Doctors-Patients join table, where each row holds a foreign key of doctor_id and patient_id. Both parties have many of their counterparts through that join table.
+ 
 13. Describe and diagram the relationship between museums and original_paintings.
+ * An original_painting belongs to one museum, and a museum has many original_paintings.
+
 14. What are some examples of acceptable values for the parts of an HTTP response?
+ * Protocol: http.
+
 15. What types of output do we want to test when we test our controllers?
+ * Page content?
+
 16. What could you see in your code that would make you think you might want to create a partial?
+ * Nope.
+ 
 17. Why might you use a helper method?
+ * Refactor your controller. Distribute that responsibility!
