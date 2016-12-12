@@ -53,7 +53,7 @@ Note: When you're done, submit a PR.
  * created_at and updated_at
  
 6. What cURL flag can you use to send a `POST` request?
- * No clue.
+ * No clue. (Looked it up and found -X).
  
 7. What case does JSON (and JavaScript) use for multi-word variables?
  * thisOne amIRight?
@@ -89,13 +89,13 @@ end
  * An original_painting belongs to one museum, and a museum has many original_paintings.
 
 14. What are some examples of acceptable values for the parts of an HTTP response?
- * Protocol: http.
+ * Protocol: http, status code: 404, 200, 500, etc., and the body content.
 
 15. What types of output do we want to test when we test our controllers?
- * Page content?
+ * The URL? Not sure on this one.
 
 16. What could you see in your code that would make you think you might want to create a partial?
- * Nope.
+ * Repetition of a form (e.g., creates and updates).
  
 17. Why might you use a helper method?
  * Refactor your controller. Distribute that responsibility!
