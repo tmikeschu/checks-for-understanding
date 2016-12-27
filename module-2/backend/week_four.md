@@ -10,11 +10,28 @@ Note: When you're done, submit a PR with a reflection in the comments about how 
 ### Questions
 
 * What is a cookie?
+
+  * A cookie is a hash-like object of information about a user that relates to the application
+  
 * What’s the difference between a session and a cookie?
+
+  * A session is a special type of cookie, indicating a certain scope of the data and features available to a user.
+  
 * What’s a flash and when do you want to use flashes?
+  
+  * A flash is a special cookie used to communicate with the user, usually about errors or successes.
+  
 * Why do people say “HTTP is stateless”?
+
+  * The HTTP cycle by itself cannot remember any information beyond its cycle.
+  
 * What’s authentication? Explain.
+
+  * Authentication is verifying who a user is based on existing credentials in the database
+  
 * What’s the difference between authentication and authorization?
+
+  * Authorization 
 * What’s a before filter?
 * How do we keep track of a user once they’ve logged in?
 * When do you want to namespace a resource? When do you want to nest a resource? What's the differences between those two approaches?
